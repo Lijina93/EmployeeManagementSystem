@@ -1,0 +1,25 @@
+.addedit-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 36px 24px 60px;
+}
+
+.addedit-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.addedit-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.form-skeleton {
+  height: 400px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  animation: pulse 1.4s ease-in-out infinite;
+}

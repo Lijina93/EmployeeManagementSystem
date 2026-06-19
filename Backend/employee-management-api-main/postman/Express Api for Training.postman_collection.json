@@ -1,0 +1,411 @@
+{
+  "info": {
+    "_postman_id": "a3062dce-f140-4090-985f-21d83cfac157",
+    "name": "Express Api for Training",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32153136",
+    "_collection_link": "https://go.postman.co/collection/32153136-a3062dce-f140-4090-985f-21d83cfac157?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/login",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get employees",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{tocken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{base_url}}/api/employee/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "employee",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add employee",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{tocken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"DOB\": \"1980-01-10\",\r\n  \"BasicPay\": 20000,\r\n  \"Gender\": \"Male\",\r\n\r\n  \"FirstName\": \"Dasn\",\r\n  \"LastName\": \"T\",\r\n\r\n  \"MobileNumber\": \"9876543210\",\r\n  \"PersonalEmail\": \"das6.doe@hotmail.com\",\r\n\r\n  \"PostalAddress\": \"edan street\",\r\n  \"City\": \"newdelhi\",\r\n\r\n  \"Country\": \"6a229b19925d6f96fce796d8\",\r\n\r\n  \"Designation\": \"6a229358925d6f96fce796d0\",\r\n\r\n  \"Education\": [\r\n    {\r\n      \"Course\": \"6a229cde925d6f96fce796e6\",\r\n      \"Specialization\": \"6a229d17925d6f96fce796e9\",\r\n      \"Institution\": \"6a229c8f925d6f96fce796db\",\r\n      \"Grade\": 8.89\r\n    },\r\n    {\r\n      \"Course\": \"6a229cde925d6f96fce796e7\",\r\n      \"Specialization\": \"6a229d17925d6f96fce796e9\",\r\n      \"Institution\": \"6a229c8f925d6f96fce796e1\",\r\n      \"Grade\": 9.86\r\n    }\r\n  ],\r\n\r\n  \"WorkExperience\": [\r\n    {\r\n      \"Company\": \"6a229d73925d6f96fce796f0\",\r\n      \"LastDesignation\": \"Senior Software Engineer\",\r\n      \"DurationMonths\": 12,\r\n      \"Remarks\": \"\"\r\n    },\r\n    {\r\n      \"Company\": \"6a229d73925d6f96fce796f1\",\r\n      \"LastDesignation\": \"Senior Software Engineer\",\r\n      \"DurationMonths\": 24,\r\n      \"Remarks\": \"\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/employee",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "employee"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update employee whole data",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{tocken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\r\n\r\n  \"FirstName\": \"Dausn\",\r\n  \"LastName\": \"T\",\r\n\r\n  \"MobileNumber\": \"9876543210\",\r\n  \"PersonalEmail\": \"das96.doe@hotmail.com\",\r\n\r\n  \"PostalAddress\": \"edan street\",\r\n  \"City\": \"newdelhi\",\r\n\r\n  \"Country\": \"6a229b19925d6f96fce796d8\",\r\n\r\n  \"Designation\": \"6a229358925d6f96fce796d0\",\r\n\r\n  \"Education\": [\r\n    {\r\n      \"Course\": \"6a229cde925d6f96fce796e6\",\r\n      \"Specialization\": \"6a229d17925d6f96fce796e9\",\r\n      \"Institution\": \"6a229c8f925d6f96fce796db\",\r\n      \"Grade\": 8.89\r\n    },\r\n    {\r\n      \"Course\": \"6a229cde925d6f96fce796e7\",\r\n      \"Specialization\": \"6a229d17925d6f96fce796e9\",\r\n      \"Institution\": \"6a229c8f925d6f96fce796e1\",\r\n      \"Grade\": 9.86\r\n    }\r\n  ],\r\n\r\n  \"WorkExperience\": [\r\n    {\r\n      \"Company\": \"6a229d73925d6f96fce796f0\",\r\n      \"LastDesignation\": \"Senior Software Engineer\",\r\n      \"DurationMonths\": 12,\r\n      \"Remarks\": \"\"\r\n    },\r\n    {\r\n      \"Company\": \"6a229d73925d6f96fce796f1\",\r\n      \"LastDesignation\": \"Senior Software Engineer\",\r\n      \"DurationMonths\": 24,\r\n      \"Remarks\": \"\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/employee/6a290e28d2700fb87b911127",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "employee",
+            "6a290e28d2700fb87b911127"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update employee key",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{tocken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/employee/6a27cb9bd2bbeff8c6691445",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "employee",
+            "6a27cb9bd2bbeff8c6691445"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete employee",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{tocken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/employee/6a290e28d2700fb87b911127",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "employee",
+            "6a290e28d2700fb87b911127"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get companies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/companies",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "companies"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get countries",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/countries",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "countries"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get courses",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/courses",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "courses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get currencies",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/currencies",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "currencies"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get designations",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/designations",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "designations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get institutions",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/institutions",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "institutions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get specializations",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/specializations",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "specializations"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
